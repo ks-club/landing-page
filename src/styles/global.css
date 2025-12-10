@@ -139,16 +139,25 @@ hr {
 	border-top: 1px solid rgb(var(--gray-light));
 }
 @media (max-width: 720px) {
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		height: 100dvh;   /* match visible mobile viewport */
+		overflow: hidden; /* prevent scrolling */
+	}
+
 	body {
 		font-size: 18px;
-		align-items: flex-start;  /* content near top instead of vertical center */
-		padding-top: 3rem;        /* adjust this number to taste */
-		height: auto;             /* don't force exact 100vh */
-		min-height: 100dvh;       /* use dynamic viewport height on mobile */
+		/* keep horizontal centering, move content toward top */
+		justify-content: center;
+		align-items: flex-start;
+		padding-top: 2.5rem; /* tweak up/down to taste */
 	}
 
 	main {
 		padding: 1em;
+		width: 100%;
 	}
 }
 
