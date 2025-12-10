@@ -177,3 +177,35 @@ hr {
 	  max-width: 250px;
 	}
   }
+
+#raindrop {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translate(-50%, -50%); /* centers the image on the click */
+	width: 120px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.raindrop {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translate(-50%, -50%);
+	width: 120px;         /* adjust as you like */
+	pointer-events: none;
+	opacity: 1;
+	animation: fall 2.2s ease-in forwards;
+}
+
+@keyframes fall {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, -50%) translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -50%) translateY(110vh);
+	}
+}

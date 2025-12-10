@@ -7,11 +7,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<link rel="preload" as="image" href="/shortbread.png" />
 	</head>
+	<script>
+	document.addEventListener("click", (e) => {
+		const drop = document.createElement("img");
+		drop.src = "/shortbread.png";
+		drop.alt = "shortbread";
+		drop.className = "raindrop";
+
+		// position at click
+		drop.style.left = `${e.clientX}px`;
+		drop.style.top = `${e.clientY}px`;
+
+		document.body.appendChild(drop);
+
+		// remove from DOM when animation finishes
+		drop.addEventListener("animationend", () => {
+		drop.remove();
+		});
+	});
+	</script>
 	<body>
 		<main>
 			<img src="/ksc_1.png" alt="logo" class="logo" />
 			<h5>COMING SOON</h5>
 		</main>
+		<script>
+		const preloader = new Image();
+		preloader.src = "/shortbread.png";
+		preloader.decode && preloader.decode();
+		</script>
 	</body>
 </html>
