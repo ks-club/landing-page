@@ -30,21 +30,28 @@
 	font-style: normal;
 	font-display: swap;
 }
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;      /* ⬅ no scrollbars at all */
+}
 body {
 	margin: 0;
 	height: 100vh;
 	display: flex;
-	justify-content: center;   /* keeps content centered horizontally */
-	align-items: center;       /* keeps content centered vertically */
+	flex-direction: column;   /* ⬅ NEW: stack header + main vertically */
+	justify-content: flex-start; /* ⬅ header at top, content flows down */
+	align-items: center;      /* center things horizontally */
 	text-align: center;
-  
+
 	font-family: sans-serif;
 	color: #6FE4E8;
 	font-size: 20px;
 	line-height: 1.7;
-  
-	/* Animated gradient background */
-	background: linear-gradient(120deg, #0B2305, #13470A, #0B2305);
+
+	background: linear-gradient(120deg, #0B2305, #13470A, #0B2305); /* 049b52 */
 	background-size: 200% 200%;
 	animation: gradientShift 12s ease-in-out infinite;
 }
@@ -138,29 +145,31 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+
 @media (max-width: 720px) {
 	html,
 	body {
 		margin: 0;
 		padding: 0;
-		height: 100dvh;   /* match visible mobile viewport */
-		overflow: hidden; /* prevent scrolling */
+		height: 100dvh;
+		overflow: hidden;
 	}
 
 	body {
 		font-size: 18px;
-		/* keep horizontal centering, move content toward top */
-		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 		align-items: flex-start;
-		padding-top: 2.5rem; /* tweak up/down to taste */
+		padding-top: 2.5rem;
 	}
 
 	main {
 		padding: 1em;
 		width: 100%;
 		position: relative;
-		top: 40%;                 /* move down to 40% of the viewport */
-		transform: translateY(-40%); /* pull back up so it's *centered on* the 40% line */
+		top: 40%;
+		transform: translateY(-40%);
 	}
 }
 
