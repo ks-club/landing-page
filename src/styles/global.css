@@ -214,3 +214,14 @@ hr {
 		transform: translate(-50%, -50%) translateY(110vh);
 	}
 }
+
+body, main, h1, h2, h3, h4, h5, h6, .logo {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.logo {
+	pointer-events: none;
+}
