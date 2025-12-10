@@ -158,6 +158,9 @@ hr {
 	main {
 		padding: 1em;
 		width: 100%;
+		position: relative;
+		top: 40%;                 /* move down to 40% of the viewport */
+		transform: translateY(-40%); /* pull back up so it's *centered on* the 40% line */
 	}
 }
 
