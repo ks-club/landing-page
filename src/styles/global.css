@@ -147,6 +147,26 @@ hr {
 }
 
 @media (max-width: 720px) {
+	body {
+	  font-size: 18px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;   /* center vertically */
+	  align-items: center;       /* center horizontally */
+	  padding-top: 0;            /* remove the push-down */
+	}
+  
+	main {
+	  position: static;          /* reset */
+	  transform: none;           /* reset */
+	  padding: 1em;
+	  width: 100%;
+	  margin: 0;                 /* avoid auto centering weirdness */
+	}
+  }
+  
+
+/* @media (max-width: 720px) {
 	html,
 	body {
 		margin: 0;
@@ -168,10 +188,8 @@ hr {
 		padding: 1em;
 		width: 100%;
 		position: relative;
-		top: 40%;
-		transform: translateY(-40%);
 	}
-}
+} */
 
 .sr-only {
 	border: 0;
